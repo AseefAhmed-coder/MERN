@@ -1,0 +1,155 @@
+const student_detail = [
+    ["Aseef","Ahmed",10,89],
+    ["hammad","shakeel",45,85,"05th October 1998"],
+    ["Ali","Ahmed",50,58],
+    ["Muhammad","Yousuf",47,92],
+    ["Ismail","Paracha",1,92,"29th December 1998"]
+];
+const obj = ["first_name","last_name","ID","Marks","DOB"];
+// USE ARRAY ADVANCE METHOD map and reduce
+const result_a = student_detail.map(detail => {
+    return obj.reduce((student, key, index) => {
+        student[key] = detail[index];
+        return student;
+    }, {});
+});
+console.log("Result_A ",result_a,";\n"); // Print Result A with using Array MAP and Reduce function
+
+// USE NESTED FOR LOOP WITHOUT ARRAY METHOD
+const result_b = [];
+for (let i = 0; i < student_detail.length; i++) {
+    const student = {}; 
+    const detail = student_detail[i]; 
+    for (let j = 0; j < obj.length; j++) {
+        const key = obj[j]; 
+        const value = detail[j]; 
+        student[key] = value; 
+    }
+    result_b.push(student); 
+}
+console.log("\n\t\nResult_B ",result_b,";\n"); // Print Result B with using nested loops function
+
+//USE ARRAY METHOD ONLY map
+const result_c = student_detail.map(([first_name, last_name, ID, Marks, DOB]) => {
+    return { first_name, last_name, ID, Marks, DOB };
+});
+console.log("Result_C ",result_c,";\n"); //Print Result C with using only Array Map Method
+
+
+
+//Output of the Code
+node /tmp/WEvHqwRX49.js
+Result_A  [
+  {
+    first_name: 'Aseef',
+    last_name: 'Ahmed',
+    ID: 10,
+    Marks: 89,
+    DOB: undefined
+  },
+  {
+    first_name: 'hammad',
+    last_name: 'shakeel',
+    ID: 45,
+    Marks: 85,
+    DOB: '05th October 1998'
+  },
+  {
+    first_name: 'Ali',
+    last_name: 'Ahmed',
+    ID: 50,
+    Marks: 58,
+    DOB: undefined
+  },
+  {
+    first_name: 'Muhammad',
+    last_name: 'Yousuf',
+    ID: 47,
+    Marks: 92,
+    DOB: undefined
+  },
+  {
+    first_name: 'Ismail',
+    last_name: 'Paracha',
+    ID: 1,
+    Marks: 92,
+    DOB: '29th December 1998'
+  }
+] ;
+
+Result_B  [
+  {
+    first_name: 'Aseef',
+    last_name: 'Ahmed',
+    ID: 10,
+    Marks: 89,
+    DOB: undefined
+  },
+  {
+    first_name: 'hammad',
+    last_name: 'shakeel',
+    ID: 45,
+    Marks: 85,
+    DOB: '05th October 1998'
+  },
+  {
+    first_name: 'Ali',
+    last_name: 'Ahmed',
+    ID: 50,
+    Marks: 58,
+    DOB: undefined
+  },
+  {
+    first_name: 'Muhammad',
+    last_name: 'Yousuf',
+    ID: 47,
+    Marks: 92,
+    DOB: undefined
+  },
+  {
+    first_name: 'Ismail',
+    last_name: 'Paracha',
+    ID: 1,
+    Marks: 92,
+    DOB: '29th December 1998'
+  }
+] ;
+
+Result_C  [
+  {
+    first_name: 'Aseef',
+    last_name: 'Ahmed',
+    ID: 10,
+    Marks: 89,
+    DOB: undefined
+  },
+  {
+    first_name: 'hammad',
+    last_name: 'shakeel',
+    ID: 45,
+    Marks: 85,
+    DOB: '05th October 1998'
+  },
+  {
+    first_name: 'Ali',
+    last_name: 'Ahmed',
+    ID: 50,
+    Marks: 58,
+    DOB: undefined
+  },
+  {
+    first_name: 'Muhammad',
+    last_name: 'Yousuf',
+    ID: 47,
+    Marks: 92,
+    DOB: undefined
+  },
+  {
+    first_name: 'Ismail',
+    last_name: 'Paracha',
+    ID: 1,
+    Marks: 92,
+    DOB: '29th December 1998'
+  }
+] ;
+
