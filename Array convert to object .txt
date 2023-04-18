@@ -5,7 +5,13 @@ const student_detail = [
     ["Muhammad","Yousuf",47,92],
     ["Ismail","Paracha",1,92,"29th December 1998"]
 ];
+
+
+
 const obj = ["first_name","last_name","ID","Marks","DOB"];
+
+
+
 // USE ARRAY ADVANCE METHOD map and reduce
 const result_a = student_detail.map(detail => {
     return obj.reduce((student, key, index) => {
@@ -14,6 +20,8 @@ const result_a = student_detail.map(detail => {
     }, {});
 });
 console.log("Result_A ",result_a,";\n"); // Print Result A with using Array MAP and Reduce function
+
+
 
 // USE NESTED FOR LOOP WITHOUT ARRAY METHOD
 const result_b = [];
@@ -29,11 +37,16 @@ for (let i = 0; i < student_detail.length; i++) {
 }
 console.log("\n\t\nResult_B ",result_b,";\n"); // Print Result B with using nested loops function
 
+
+
+
 //USE ARRAY METHOD ONLY map
 const result_c = student_detail.map(([first_name, last_name, ID, Marks, DOB]) => {
     return { first_name, last_name, ID, Marks, DOB };
 });
 console.log("Result_C ",result_c,";\n"); //Print Result C with using only Array Map Method
+
+
 
 
 
